@@ -13,10 +13,11 @@
 
 1. FE: 리액트
 
-   - React Hook Form
+   - create-react-app
    - Material UI
    - styled component
    - typescript: 빡빡하게 써보기
+   - React Hook Form
    - jest
 
 2. 장고
@@ -24,6 +25,7 @@
    - APITestCase
 
 3. TF
+
 4. DB: MySQL
 5. 인프라 / OS : AWS Linux
 6. 배포 : docker, pm2, **NGINX**, **APACHE**, 하둡
