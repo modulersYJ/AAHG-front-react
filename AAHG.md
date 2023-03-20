@@ -105,6 +105,7 @@ Already At Home your Goods, (약칭 '악!').<br>
 	- [사업 계획서]()
 	- [요구사항 정의서]()
     - [와이어프레임]()
+    - [FlowChartSimple](./AAHG_flowChartSimple.jpg)
 	- [ERD]()
 	- [UML]()
    
