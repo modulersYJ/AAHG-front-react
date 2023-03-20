@@ -1,7 +1,14 @@
 # AAHG! (악!)
+<img src=./BrandSrc/AAHG_LOGO.png width=300 />
+
+<br>
+
 Already At Home your Goods, (약칭 '악!').<br>
 아이디어를 구체화 시키기 위한 문서입니다.
 
+
+
+<br>
 <br>
 
 ## 아이디어 개요
