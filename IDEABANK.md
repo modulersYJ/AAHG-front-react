@@ -79,8 +79,15 @@ pivot plan)
 <br>
 
 
-### 5. 알고리즘 학습 특화 AI 서포트 플랫폼 or extension  BY CHATGPT
+### 5. 알고리즘 학습 특화 AI 서포트 플랫폼 or extension BY CHATGPT
 - 구현가능성 높음, 간단
+<br>
+
+```
+chatGPT API와 연동한 알고리즘 학습 서포팅 사이트? 확장?
+
+1. chatGPT
+```
 
 <br>   
 

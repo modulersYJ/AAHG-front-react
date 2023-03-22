@@ -109,12 +109,12 @@ Already At Home your Goods, (약칭 '악!').<br>
 <br>
 
 4. 기획, 계획서 작성
-	- [사업 계획서]()
-	- [요구사항 정의서]()
-    - [와이어프레임]()
-    - [FlowChartSimple](./AAHG_flowChartSimple.jpg)
-	- [ERD]()
-	- [UML]()
+	- [사업 계획서 - yet]()
+	- [요구사항 정의서 - yet]()
+    - [와이어프레임 - yet]()
+    - [FlowChartSimple - 03.20 up](./AAHG_flowChartSimple.jpg)
+	- [ERD - 03.22 up](./BrandSrc/imgForDocs/AAHG_erd_v01.png)
+	- [UML - yet]()
    
 <br>
 
