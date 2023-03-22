@@ -2,7 +2,59 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const SignUp = ({}): JSX.Element => {
-  const [userData, setUserData] = useState({});
+  // 인풋 데이터
+  const [userData, setUserData] = useState<IUserData>({
+    name: "",
+    id: "",
+    password: "",
+    passwordCheck: "",
+    address: "",
+    tel: "",
+  });
+  interface IUserData {
+    name: string;
+    id: string;
+    password: string;
+    passwordCheck: string;
+    address: string;
+    tel: string;
+  }
+
+  // 에러 객체
+  const [error, setError] = useState<IError>({
+    name: false,
+    id: false,
+    password: false,
+    passwordCheck: false,
+    address: false,
+    tel: false,
+  });
+  interface IError {
+    name: boolean;
+    id: boolean;
+    password: boolean;
+    passwordCheck: boolean;
+    address: boolean;
+    tel: boolean;
+  }
+
+  // 에러메시지
+  const [errorMsg, setErrorMsg] = useState<IErrorMsg>({
+    name: "",
+    id: "",
+    password: "",
+    passwordCheck: "",
+    address: "",
+    tel: "",
+  });
+  interface IErrorMsg {
+    name: string;
+    id: string;
+    password: string;
+    passwordCheck: string;
+    address: string;
+    tel: string;
+  }
 
   const handleChange = (e): void => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -26,6 +78,14 @@ const SignUp = ({}): JSX.Element => {
         <InputDiv>
           <label htmlFor="password"> 비밀번호</label>
           <InputBox onChange={handleChange} type="password" name="password" />
+        </InputDiv>
+        <InputDiv>
+          <label htmlFor="passwordCheck"> 비밀번호 확인</label>
+          <InputBox
+            onChange={handleChange}
+            type="password"
+            name="passwordCheck"
+          />
         </InputDiv>
         <InputDiv>
           <label htmlFor="address"> 주소</label>
