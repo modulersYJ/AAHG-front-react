@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./layouts/Header";
-import Sidebar from "./layouts/Sidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 import styled from "styled-components";
-import Footer from "./layouts/Footer";
+import Footer from "./Footer";
 
 const Root = () => {
   return (
@@ -19,8 +19,9 @@ const Root = () => {
 };
 
 const RootPage = styled.div`
-  /* height: 100vh; */
-  /* display: flex; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Root;

@@ -1,8 +1,11 @@
+import { StyledLink } from "../components/common/Buttons";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Sidebar = () => {
+  let someId = Math.random() * 100;
+  someId = Math.floor(someId);
   return (
     <BlackSidebar>
       <div>이것이 사이드바</div>
@@ -16,7 +19,7 @@ const Sidebar = () => {
         <StyledLink to={"/my-page"}>
           <MenuDiv>메뉴3</MenuDiv>
         </StyledLink>
-        <StyledLink to={"/order:id"}>
+        <StyledLink to={`/order/${someId}`}>
           <MenuDiv>메뉴4</MenuDiv>
         </StyledLink>
       </nav>
@@ -27,7 +30,7 @@ const Sidebar = () => {
 export default Sidebar;
 
 const BlackSidebar = styled.aside`
-  /* height: 100%; */
+  height: 100vh;
   width: 200px;
   background-color: #000000;
   color: white;
@@ -36,6 +39,9 @@ const BlackSidebar = styled.aside`
   position: relative;
   /* justify-content: center; */
   /* align-items: center; */
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const MenuDiv = styled.div`
@@ -45,13 +51,5 @@ const MenuDiv = styled.div`
   border: 1px solid white;
   &:hover {
     background-color: white;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: yellow;
-  text-decoration: none;
-  &:focus {
-    outline: none;
   }
 `;

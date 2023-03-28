@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const SignUp = ({}): JSX.Element => {
@@ -65,6 +66,7 @@ const SignUp = ({}): JSX.Element => {
   return (
     <>
       <h1>회원가입 페이지 입니다.</h1>
+      <Link to={"/"}>돌아가기 (임시)</Link>
       {/* <RoundDiv> */}
       <Form method="POST" action="www.youtube.com">
         <InputDiv>

@@ -1,15 +1,15 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import BusinessLayout from "./BusinessLayout";
+import BusinessLayout from "./layouts/BusinessLayout";
 import Dummy from "./components/Dummy";
 import ErrorComponent from "./components/ErrorComponent";
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
-import Root from "./Root";
+import Root from "./layouts/Root";
 
 const router = createBrowserRouter([
   {
-    path: "/sign-in",
+    path: "/sign-up",
     element: <SignUp />,
   },
   {
@@ -17,6 +17,11 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorComponent />,
     children: [
+      {
+        index: true,
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "generate",
         element: <Dummy />,
