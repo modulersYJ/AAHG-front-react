@@ -16,7 +16,7 @@ https://pgnt.tistory.com/127
 https://dojang.io/mod/page/view.php?id=2470
 
 1. Scripts 폴더 내 activate.bat 실행
-2. activate.ps1 실행
+2. Activate.ps1 실행
 <img src="./MD_IMG/img_activated.png" >
 
 <br><br>
@@ -85,3 +85,56 @@ def get_utils_about():
 5. `127.0.0.1:8000/about` 요청 및 결과확인
 
 <img src="./MD_IMG/testJsonResult.png">
+
+<br>
+
+6. 리액트에서 접근해보기
+```js
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const About = (): JSX.Element => {
+  const [data, setData] = useState("");
+
+  const fetchData = async () => {
+    const headers = {
+      "Content-type": "application/json; charset=utf-8;",
+      Accept: "application/json",
+    };
+
+    axios
+      .get("http://127.0.0.1:8000/about/", { headers })
+      .then((response) => {
+        setData(response.data.about);
+      })
+      .catch((response) => {
+        alert(response.data.message);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [setData]);
+
+  return (
+    <div style={{ padding: 60 }}>
+      <h1 style={{ fontSize: 62, fontWeight: "bold", padding: 30 }}>About</h1>
+    </div>
+  );
+  <div></div>;
+};
+
+export default About;
+```
+<img src="./MD_IMG/corsError.png">
+
+<br><br>
+
+7. Cors 에러 해결하기
+   
+   1. `pip install django-cors-header`
+   2. ./장고서버/`settings.py`의 `INSTALLED_APPS`에 `"corsheaders"`, `MIDDLEWARE`에 `"corsheaders.middleware.CorsMiddleware"`, 추가
+   3. settings.py에 `CORS_ORIGIN_ALLOW_ALL = True`설정하여 전체 임시허용
+		- 정석 : https://stackoverflow.com/questions/64744518/http-localhost3000-has-been-blocked-by-cors-policy-no-access-control-allo
+
+    <img src="./MD_IMG/corsSolved.png">

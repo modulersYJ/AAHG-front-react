@@ -4,6 +4,8 @@ import SignUp from "./page/SignUp";
 import Home from "./page/Home";
 import React from "react";
 
+import About from "./page/AboutDjangoTest";
+
 function App() {
   return (
     <>
@@ -12,6 +14,7 @@ function App() {
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<SignUp />} path="sign-up" />
+            <Route element={<About />} path="about" />
           </Routes>
         </BrowserRouter>
       </div>
