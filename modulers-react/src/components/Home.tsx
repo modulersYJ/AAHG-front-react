@@ -4,12 +4,21 @@ import styled from "styled-components";
 
 const Home = ({}): JSX.Element => {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <div>홈 입니다.</div>
       <Link to={"/sign-up"}>
         <Button>회원가입</Button>
       </Link>
-    </>
+    </div>
   );
 };
 
