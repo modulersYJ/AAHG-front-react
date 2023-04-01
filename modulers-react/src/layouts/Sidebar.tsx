@@ -1,4 +1,8 @@
-import { StyledLink } from "../components/common/Buttons";
+import {
+  RoundButton,
+  StyledLink,
+  SubmitButton,
+} from "../components/common/Buttons";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -121,6 +125,10 @@ const Sidebar = () => {
           <></>
         )}
       </nav>
+      <RoundButton>
+        {/* <SubmitButton>로그아웃</SubmitButton> */}
+        <StyledLink to={"login"}>로그아웃</StyledLink>
+      </RoundButton>
     </BlackSidebar>
   );
 };

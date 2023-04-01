@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { SubmitButton } from "./common/Buttons";
 
 const SignUp = ({}): JSX.Element => {
   // 인풋 데이터
@@ -106,6 +107,9 @@ const SignUp = ({}): JSX.Element => {
         <div>
           <SubmitButton type={"submit"} value="제출" />
           <SubmitButton type={"reset"} value="초기화" />
+          <Link to={"/login"}>
+            <SubmitButton type="button" value="로그인" />
+          </Link>
         </div>
       </Form>
     </>
@@ -127,18 +131,6 @@ const InputBox = styled.input`
   height: 30px;
   border-radius: 5px;
   margin-bottom: 10px;
-`;
-
-const SubmitButton = styled.input`
-  background-color: red;
-  color: white;
-  width: 100px;
-  height: 50px;
-  font-size: large;
-  border-radius: 20px;
-  border: 0px;
-  margin: 10px;
-  padding: 10px;
 `;
 
 const InputDiv = styled.div`

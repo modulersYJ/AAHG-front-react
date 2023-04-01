@@ -3,11 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Header = () => {
+interface IHeaderProps {
+  sidebarOpen: boolean;
+  handleOpenClick: () => void;
+}
+
+const Header = ({ sidebarOpen, handleOpenClick }: IHeaderProps) => {
   return (
     <GreenHeader>
       <SidebarHeader>
-        <button>햄버거</button>
+        <button onClick={handleOpenClick}>햄버거</button>
       </SidebarHeader>
       <h2>이것이 헤더</h2>
       <HeaderRight>

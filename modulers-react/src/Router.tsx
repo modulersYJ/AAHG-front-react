@@ -6,11 +6,16 @@ import ErrorComponent from "./components/ErrorComponent";
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import Root from "./layouts/Root";
+import Login from "./components/pages/LogIn";
 
 const router = createBrowserRouter([
   {
     path: "/sign-up",
     element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/",

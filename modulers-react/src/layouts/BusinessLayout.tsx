@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 const BusinessLayout = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Sidebar />
         <Outlet />
