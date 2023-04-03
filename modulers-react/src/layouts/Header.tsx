@@ -12,7 +12,7 @@ const Header = ({ sidebarOpen, handleOpenClick }: IHeaderProps) => {
   return (
     <GreenHeader>
       <SidebarHeader>
-        <button onClick={handleOpenClick}>햄버거</button>
+        <button onClick={handleOpenClick}>햄버거(열기/닫기)</button>
       </SidebarHeader>
       <h2>이것이 헤더</h2>
       <HeaderRight>

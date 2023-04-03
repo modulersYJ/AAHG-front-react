@@ -23,7 +23,9 @@ const Login = () => {
   });
 
   const onValid = (data, e) => {
-    console.log(data, "e : ", e);
+    console.log("data", data);
+    console.log("e.type : ", e.type);
+    console.log("e : ", e);
     // TODO 여기 axios 넣어야 함
   };
 
@@ -65,17 +67,29 @@ const Login = () => {
         />
         {errors?.email ? (
           <>
-            <span style={{ color: "red" }}>{errors?.email.message}</span>
-            <span style={{ color: "red" }}>{errors?.email.type}</span>
+            <span style={{ color: "red" }}>
+              {`message : ${errors?.email.message} type : ${errors?.email.type}`}
+            </span>
           </>
         ) : (
-          <p>에러업슴</p>
+          <p> </p>
         )}
         <label htmlFor="비밀번호">비밀번호</label>
         <GoodInput
           type="password"
-          {...register("password", { required: true })}
+          {...register("password", {
+            required: "필수 입력값이에용",
+          })}
         />
+        {errors?.password ? (
+          <>
+            <span style={{ color: "red" }}>
+              {`message : ${errors?.password.message} type : ${errors?.password.type}`}
+            </span>
+          </>
+        ) : (
+          <p> </p>
+        )}
         <div>
           <SubmitButton type="submit" value="로그인" />
           <SubmitButton type="submit" value="찾기" />

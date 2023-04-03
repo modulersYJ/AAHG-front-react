@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { SubmitButton } from "./common/Buttons";
+import { SubmitButton } from "../common/Buttons";
 
 const SignUp = ({}): JSX.Element => {
   // 인풋 데이터

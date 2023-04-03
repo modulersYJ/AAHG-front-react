@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { OutletDefault } from "./common/Outlet";
 
 const Dummy = ({}): JSX.Element => {
   return (
-    <TungDiv>
-      <h1>텅~</h1>
-      <h2>뭔가비즈니스로직이들어갈곳임</h2>
-    </TungDiv>
+    <OutletDefault>
+      <TungDiv>
+        <h1>텅~</h1>
+        <h2>뭔가비즈니스로직이들어갈곳임</h2>
+      </TungDiv>
+    </OutletDefault>
   );
 };
 

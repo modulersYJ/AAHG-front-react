@@ -41,12 +41,12 @@ const Sidebar = () => {
           id="generate"
           level={1}
         >
-          메뉴1
+          만들기
         </MenuDiv>
         {selectedMenus.generate === true ? (
           <ChildMenuList>
-            <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴1</div>
+            <StyledLink to={`/generate`}>
+              <div>만들기</div>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
               <div>자식메뉴2</div>
