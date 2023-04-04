@@ -36,6 +36,11 @@
 
 1. [Pytorch3D를 운영이 가능한 Colab의 python 버전 & dependencies & CUDA 관련 정보 추출 및 확인 ](./BrandSrc/depPytorch3d.txt)
 
+	- +환경구축 ref: 
+	https://velog.io/@ghgh5317/pytorch3d-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
+
 ### 4. react & django /feat-user-core 구축 및 테스트
 
 
+
+#
