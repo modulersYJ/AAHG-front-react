@@ -26,7 +26,7 @@ const Sidebar = () => {
     order: boolean;
   }
 
-  const handleLinkClick = (e) => {
+  const handleParentClick = (e) => {
     const isOpen = selectedMenus[e.target.id];
     setSelectedMenus({ ...selectedMenus, [e.target.id]: !isOpen });
   };
@@ -36,7 +36,7 @@ const Sidebar = () => {
       <div>이것이 사이드바</div>
       <nav>
         <MenuDiv
-          onClick={handleLinkClick}
+          onClick={handleParentClick}
           name="generate"
           id="generate"
           level={1}
@@ -61,13 +61,13 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="shop" id="shop" level={1}>
-          메뉴2
+        <MenuDiv onClick={handleParentClick} name="shop" id="shop" level={1}>
+          업체 보기
         </MenuDiv>
         {selectedMenus.shop === true ? (
           <ChildMenuList>
-            <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴1</div>
+            <StyledLink to={`/match`}>
+              <div>매칭</div>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
               <div>자식메뉴2</div>
@@ -82,7 +82,12 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="myPage" id="myPage" level={1}>
+        <MenuDiv
+          onClick={handleParentClick}
+          name="myPage"
+          id="myPage"
+          level={1}
+        >
           메뉴3
         </MenuDiv>
         {selectedMenus.myPage === true ? (
@@ -103,7 +108,7 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="order" id="order" level={1}>
+        <MenuDiv onClick={handleParentClick} name="order" id="order" level={1}>
           메뉴4
         </MenuDiv>
         {selectedMenus.order === true ? (
