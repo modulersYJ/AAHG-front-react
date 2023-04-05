@@ -141,7 +141,8 @@ const Sidebar = () => {
 export default Sidebar;
 
 const BlackSidebar = styled.aside`
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 200px;
   background-color: #000000;
   color: white;
