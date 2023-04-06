@@ -10,6 +10,7 @@ import Login from "./components/pages/LogIn";
 import Generate from "./components/pages/Generate";
 import ErrorComponent500 from "./components/errors/ErrorComponent500";
 import Match from "./components/pages/Match";
+import StoreDetail from "./components/pages/StoreDetail";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         path: "shop",
         errorElement: <ErrorComponent500 />,
         element: <Dummy />,
+      },
+      {
+        path: "store-detail",
+        errorElement: <ErrorComponent500 />,
+        element: <StoreDetail />,
       },
       {
         path: "my-page",
