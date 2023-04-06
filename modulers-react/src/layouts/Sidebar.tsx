@@ -35,12 +35,7 @@ const Sidebar = () => {
     <BlackSidebar>
       <div>이것이 사이드바</div>
       <nav>
-        <MenuDiv
-          onClick={handleLinkClick}
-          name="generate"
-          id="generate"
-          level={1}
-        >
+        <MenuDiv onClick={handleLinkClick} id="generate">
           만들기
         </MenuDiv>
         {selectedMenus.generate === true ? (
@@ -61,7 +56,7 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="shop" id="shop" level={1}>
+        <MenuDiv onClick={handleLinkClick} id="shop">
           메뉴2
         </MenuDiv>
         {selectedMenus.shop === true ? (
@@ -82,7 +77,7 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="myPage" id="myPage" level={1}>
+        <MenuDiv onClick={handleLinkClick} id="myPage">
           메뉴3
         </MenuDiv>
         {selectedMenus.myPage === true ? (
@@ -103,7 +98,7 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleLinkClick} name="order" id="order" level={1}>
+        <MenuDiv onClick={handleLinkClick} id="order">
           메뉴4
         </MenuDiv>
         {selectedMenus.order === true ? (
