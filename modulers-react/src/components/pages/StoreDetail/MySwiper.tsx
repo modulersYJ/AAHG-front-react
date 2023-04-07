@@ -1,50 +1,21 @@
 import React, { useState } from "react";
+
+import { Swiper as SwiperType } from "swiper/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import images, { Image } from "./images";
+import styled from "styled-components";
 
-function MySwiper() {
+const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [imageWidth, setImageWidth] = useState(490);
   const [imageHeight, setImageHeight] = useState(348);
 
-  const images = [
-    {
-      src: "https://via.placeholder.com/490x348/FF5733/FFFFFF?text=Image+1",
-      alt: "Image 1",
-      width: 490,
-      height: 348,
-    },
-    {
-      src: "https://via.placeholder.com/490x348/C70039/FFFFFF?text=Image+2",
-      alt: "Image 2",
-      width: 490,
-      height: 348,
-    },
-    {
-      src: "https://via.placeholder.com/490x348/900C3F/FFFFFF?text=Image+3",
-      alt: "Image 3",
-      width: 490,
-      height: 348,
-    },
-    {
-      src: "https://via.placeholder.com/490x348/581845/FFFFFF?text=Image+4",
-      alt: "Image 4",
-      width: 490,
-      height: 348,
-    },
-    {
-      src: "https://via.placeholder.com/490x348/FFC300/FFFFFF?text=Image+5",
-      alt: "Image 5",
-      width: 490,
-      height: 348,
-    },
-  ];
-
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: SwiperType) => {
     setCurrentSlideIndex(swiper.activeIndex);
   };
 
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: number) => {
     setImageWidth(images[index].width);
     setImageHeight(images[index].height);
     setCurrentSlideIndex(index);
@@ -73,10 +44,10 @@ function MySwiper() {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img
+            <ImageWrapper
               src={image.src}
               alt={image.alt}
-              style={{ width: "100%", height: "100%" }}
+              isActive={index === currentSlideIndex}
               onClick={() => handleImageClick(index)}
             />
           </SwiperSlide>
@@ -84,6 +55,13 @@ function MySwiper() {
       </Swiper>
     </div>
   );
-}
+};
+
+const ImageWrapper = styled.img<{ isActive: boolean }>`
+  width: 100%;
+  height: 100%;
+  border: ${({ isActive }) => (isActive ? "4px solid #aaa" : "none")};
+  box-sizing: border-box;
+`;
 
 export default MySwiper;

@@ -1,14 +1,26 @@
-import React from "react";
-import styled from "styled-components";
-import { OutletDefault } from "../../common/Outlet";
-import HotelGalleryWithThumbnails from "./HotelGalleryWithThumbnails";
+import React, { useState } from "react";
 
-const StoreDetail = (): JSX.Element => {
+import IMAGES, { Image } from "./images";
+
+import { OutletDefault } from "../../common/Outlet";
+import MySwiper from "./MySwiper";
+import images from "./images";
+import StoreSecContent from "./StoreSecContent";
+import styled from "styled-components";
+
+export default function StoreDetail(): JSX.Element {
   return (
     <OutletDefault>
-      <HotelGalleryWithThumbnails />
+      <Container>
+        <section className="store-sec-head">
+          <MySwiper images={images} />
+        </section>
+        <StoreSecContent />
+      </Container>
     </OutletDefault>
   );
-};
+}
 
-export default StoreDetail;
+const Container = styled.div`
+  margin: 120px auto 0px auto;
+`;
