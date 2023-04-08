@@ -1,4 +1,8 @@
-import { StyledLink } from "../components/common/Buttons";
+import {
+  HeaderButton,
+  RoundButton,
+  StyledLink,
+} from "../components/common/Buttons";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -12,7 +16,7 @@ const Header = ({ sidebarOpen, handleOpenClick }: IHeaderProps) => {
   return (
     <BlackHeader>
       <SidebarHeader>
-        <button onClick={handleOpenClick}>(열기/닫기)</button>
+        <HeaderButton onClick={handleOpenClick}>Menu</HeaderButton>
       </SidebarHeader>
       <HeaderCenter>
         <h1 style={{ display: "flex", alignItems: "center" }}>
