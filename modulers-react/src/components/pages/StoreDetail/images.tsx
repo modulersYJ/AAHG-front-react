@@ -7,31 +7,31 @@ export type Image = {
 
 const images: Image[] = [
   {
-    src: "https://via.placeholder.com/490x348/FF5733/FFFFFF?text=Image+1",
+    src: "/imgs/storeImgDummies/store_img_dummy1.png",
     alt: "Image 1",
     width: 490,
     height: 348,
   },
   {
-    src: "https://via.placeholder.com/490x348/C70039/FFFFFF?text=Image+2",
+    src: "/imgs/storeImgDummies/store_img_dummy2.png",
     alt: "Image 2",
     width: 490,
     height: 348,
   },
   {
-    src: "https://via.placeholder.com/490x348/900C3F/FFFFFF?text=Image+3",
+    src: "/imgs/storeImgDummies/store_img_dummy3.png",
     alt: "Image 3",
     width: 490,
     height: 348,
   },
   {
-    src: "https://via.placeholder.com/490x348/581845/FFFFFF?text=Image+4",
+    src: "/imgs/storeImgDummies/store_img_dummy4.png",
     alt: "Image 4",
     width: 490,
     height: 348,
   },
   {
-    src: "https://via.placeholder.com/490x348/FFC300/FFFFFF?text=Image+5",
+    src: "/imgs/storeImgDummies/store_img_dummy5.png",
     alt: "Image 5",
     width: 490,
     height: 348,

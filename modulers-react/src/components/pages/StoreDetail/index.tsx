@@ -5,7 +5,7 @@ import IMAGES, { Image } from "./images";
 import { OutletDefault } from "../../common/Outlet";
 import MySwiper from "./MySwiper";
 import images from "./images";
-import StoreSecContent from "./StoreSecContent";
+import StoreSecContent from "./Contents";
 import styled from "styled-components";
 
 export default function StoreDetail(): JSX.Element {

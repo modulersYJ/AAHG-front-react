@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Reviews from "./Contents/ContentReview";
+import Reviews from "./ContentReview";
 
 type TabButtonProps = {
   isActive: boolean;

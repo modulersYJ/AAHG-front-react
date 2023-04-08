@@ -11,8 +11,6 @@ type StyledImgOutletProps = {
 };
 
 const Match = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   const [fileState, setFileState] = useState<File | null>(null);
   const [isWaiting, setIsWaiting] = useState(false);
   const [warning, setWarning] = useState(false);
@@ -140,12 +138,6 @@ const StyledImgOutlet = styled.div<StyledImgOutletProps>`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${(props) => props.imageUrl});
-  background-color: orange;
-`;
-
-const StyledVideoOutlet = styled.div`
-  width: 600px;
-  height: 400px;
   background-color: orange;
 `;
 
