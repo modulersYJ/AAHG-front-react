@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Reviews from "./ContentReview";
+import ContentOptions from "./ContentOptions";
 
 type TabButtonProps = {
   isActive: boolean;
@@ -60,7 +61,7 @@ const StoreSecContent: React.FC = () => {
     {
       id: 2,
       label: "주문/옵션",
-      component: <ContentContainer>메뉴</ContentContainer>,
+      component: <ContentOptions />,
     },
     {
       id: 3,

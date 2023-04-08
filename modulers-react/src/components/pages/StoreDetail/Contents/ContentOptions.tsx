@@ -1,72 +1,184 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-type Review = {
-  nickname: string;
-  date: string;
-  rating: number;
-  comment: string;
-  photo?: string;
+type PrinterType = "적층형" | "절삭형";
+type Size = "소" | "중" | "대";
+type Material = "PLA" | "ABS" | "PETG";
+type Paint = "no" | "yes";
+
+interface Option {
+  printerType: PrinterType;
+  size: Size;
+  material: Material;
+  paint: Paint;
+}
+
+const initialOption: Option = {
+  printerType: "적층형",
+  size: "소",
+  material: "PLA",
+  paint: "no",
 };
 
-type Props = {
-  reviews: Review[];
+const DUMMYPRICES = {
+  printerType: {
+    적층형: 10000,
+    절삭형: 15000,
+  },
+  size: {
+    소: 5000,
+    중: 15000,
+    대: 30000,
+  },
+  material: {
+    PLA: 3000,
+    ABS: 4000,
+    PETG: 5000,
+  },
+  paint: {
+    no: 0,
+    yes: 5000,
+  },
 };
 
-const Reviews: React.FC<Props> = ({ reviews }) => {
+const ContentOptions = (): JSX.Element => {
+  const [option, setOption] = useState<Option>(initialOption);
+
+  const handleOptionChange = (key: keyof Option, value: any) => {
+    setOption({ ...option, [key]: value });
+  };
+
+  const prices = DUMMYPRICES;
+
+  const calculateTotalPrice = () => {
+    const { printerType, size, material, paint } = option;
+    return (
+      prices.printerType[printerType] +
+      prices.size[size] +
+      prices.material[material] +
+      prices.paint[paint]
+    );
+  };
+
   return (
-    <Container>
-      {reviews.map((review, index) => (
-        <ReviewItem key={index}>
-          <Nickname>{review.nickname}</Nickname>
-          <Date>{review.date}</Date>
-          <Rating>{`${review.rating.toFixed(1)} / 5`}</Rating>
-          <Comment>{review.comment}</Comment>
-          {review.photo && <Photo src={review.photo} alt="Review photo" />}
-        </ReviewItem>
-      ))}
-    </Container>
+    <OptionsContainer>
+      <OrderOption>
+        <OptionSelector>
+          <OptionLabel>프린터 종류</OptionLabel>
+          {Object.keys(prices.printerType).map((type) => (
+            <OptionButton
+              key={type}
+              isSelected={option.printerType === type}
+              onClick={() => handleOptionChange("printerType", type)}
+            >
+              {type}
+            </OptionButton>
+          ))}
+        </OptionSelector>
+
+        <OptionSelector>
+          <OptionLabel>크기</OptionLabel>
+          {Object.keys(prices.size).map((size) => (
+            <OptionButton
+              key={size}
+              isSelected={option.size === size}
+              onClick={() => handleOptionChange("size", size)}
+            >
+              {size}
+            </OptionButton>
+          ))}
+        </OptionSelector>
+
+        <OptionSelector>
+          <OptionLabel>소재</OptionLabel>
+          {Object.keys(prices.material).map((material) => (
+            <OptionButton
+              key={material}
+              isSelected={option.material === material}
+              onClick={() => handleOptionChange("material", material)}
+            >
+              {material}
+            </OptionButton>
+          ))}
+        </OptionSelector>
+
+        <OptionSelector>
+          <OptionLabel>도색 여부</OptionLabel>
+          {Object.keys(prices.paint).map((paint) => (
+            <OptionButton
+              key={paint}
+              isSelected={option.paint === paint}
+              onClick={() => handleOptionChange("paint", paint)}
+            >
+              {paint === "no" ? "도색 안함" : "도색"}
+            </OptionButton>
+          ))}
+        </OptionSelector>
+      </OrderOption>
+      <TotalPriceContainer>
+        <TotalPriceLabel>총 가격:</TotalPriceLabel>
+        <TotalPrice>{calculateTotalPrice()}원</TotalPrice>
+      </TotalPriceContainer>
+    </OptionsContainer>
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+export default ContentOptions;
+
+const OptionsContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
 `;
 
-const ReviewItem = styled.div`
+const OrderOption = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 `;
 
-const Nickname = styled.div`
+const OptionSelector = styled.div`
+  display: flex;
+  border: solid 1px;
+  border-radius: 15px;
+  border-color: lightgrey;
+  padding: 20px 30px;
+  align-items: center;
+  margin-bottom: 1rem;
+`;
+
+const OptionLabel = styled.span`
+  width: 150px;
   font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
+  margin-right: 1rem;
 `;
 
-const Date = styled.div`
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 5px;
-`;
-
-const Rating = styled.div`
-  font-size: 14px;
-  color: #f8d64e;
-  margin-bottom: 5px;
-`;
-
-const Comment = styled.div`
-  font-size: 14px;
-  margin-bottom: 5px;
-`;
-
-const Photo = styled.img`
-  align-self: flex-end;
+const OptionButton = styled.button<{ isSelected: boolean }>`
+  background-color: ${(props) => (props.isSelected ? "#007bff" : "#ffffff")};
+  color: ${(props) => (props.isSelected ? "#ffffff" : "#000000")};
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
   width: 100px;
-  margin-top: 10px;
+
+  &:hover {
+    background-color: ${(props) => !props.isSelected && "#f0f0f0"};
+  }
+`;
+const TotalPriceContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-export default Reviews;
+const TotalPriceLabel = styled.span`
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+`;
+
+const TotalPrice = styled.span`
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #007bff;
+`;
