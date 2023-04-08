@@ -5,6 +5,7 @@ import { RoundButton } from "../common/Buttons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import VideoPlayer from "./GenerateComps/VideoPlayer";
+import { HashSpinner } from "../common/Spinners";
 
 type StyledImgOutletProps = {
   imageUrl: string;
@@ -31,6 +32,7 @@ const Match = () => {
     if (selectedFile) {
       setFileState(selectedFile);
       setImageUrl(URL.createObjectURL(selectedFile));
+      setWarning(false);
     }
   };
 
@@ -113,9 +115,20 @@ const Match = () => {
           >
             업로드
           </label>
-          {warning && <h3 style={{ color: "red" }}>이미지를 업로드하세요!</h3>}
+          {warning ? (
+            <h3 style={{ color: "red" }}>이미지를 업로드하세요!</h3>
+          ) : (
+            <></>
+          )}
           {isWaiting ? (
-            <h3>스피너</h3>
+            // <h3>스피너</h3>
+            <HashSpinner
+              style={
+                {
+                  // width: 5, height: 10
+                }
+              }
+            />
           ) : (
             <RoundButton onClick={sendFile}>만들기!</RoundButton>
           )}
