@@ -5,7 +5,11 @@ import { RoundButton, SubmitButton } from "../common/Buttons";
 import { Link } from "react-router-dom";
 
 const Match = () => {
-  // }
+  const matchList = [
+    { name: "shop1", shopId: "1" },
+    { name: "shop2", shopId: "2" },
+    { name: "shop3", shopId: "3" },
+  ];
 
   return (
     <OutletDefault>
@@ -18,19 +22,22 @@ const Match = () => {
           justifyContent: "center",
         }}
       >
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
-        <StyledShopOutlet>어떤샵1</StyledShopOutlet>
+        {matchList.map((shop) => {
+          return (
+            <Link
+              to={`/store-detail/${shop?.shopId}`}
+              style={{
+                textDecoration: "none",
+                color: "black",
+                textAlign: "center",
+              }}
+            >
+              <StyledShopOutlet>
+                <h1>{shop?.name}</h1>
+              </StyledShopOutlet>
+            </Link>
+          );
+        })}
       </div>
     </OutletDefault>
   );
@@ -42,15 +49,7 @@ const StyledShopOutlet = styled.div`
   width: 300px;
   height: 200px;
   margin: 10px;
-  background-color: orange;
-`;
-
-const StyledButtonsOutlet = styled.div`
-  width: 520px;
-  padding-left: 40px;
-  padding-right: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
-  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #868480;
 `;
