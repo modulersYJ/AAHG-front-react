@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 type PrinterType = "적층형" | "절삭형";
 type Size = "소" | "중" | "대";
@@ -43,9 +44,14 @@ const DUMMYPRICES = {
 
 const ContentOptions = (): JSX.Element => {
   const [option, setOption] = useState<Option>(initialOption);
+  const navigate = useNavigate();
 
   const handleOptionChange = (key: keyof Option, value: any) => {
     setOption({ ...option, [key]: value });
+  };
+
+  const onClickOrderBtn = () => {
+    navigate("/order/1");
   };
 
   const prices = DUMMYPRICES;
@@ -118,12 +124,30 @@ const ContentOptions = (): JSX.Element => {
       <TotalPriceContainer>
         <TotalPriceLabel>총 가격:</TotalPriceLabel>
         <TotalPrice>{calculateTotalPrice()}원</TotalPrice>
+        <OrderButton onClick={onClickOrderBtn}>주문하기</OrderButton>
       </TotalPriceContainer>
     </OptionsContainer>
   );
 };
 
 export default ContentOptions;
+
+const OrderButton = styled.button`
+  width: 150px;
+  background-color: #1a4fff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+
+  margin-left: auto;
+`;
 
 const OptionsContainer = styled.div`
   width: 90%;
