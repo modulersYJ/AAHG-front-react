@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import { Swiper as SwiperType } from "swiper/types";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { EffectFade } from "swiper";
 import "swiper/swiper-bundle.css";
-import images, { Image } from "./images";
+import { Image } from "./images";
 import styled from "styled-components";
 
 const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
@@ -17,30 +18,36 @@ const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
 
   const handleImageClick = (index: number) => {
     setImageWidth(images[index].width);
-    // setImageHeight(images[index].height);
     setCurrentSlideIndex(index);
   };
 
   return (
     <div style={{ maxWidth: "490px" }}>
-      <div>
-        <img
-          src={images[currentSlideIndex].src}
-          alt={images[currentSlideIndex].alt}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "348px",
-            width: imageWidth,
-            // height: imageHeight,
-            objectFit: "contain",
-          }}
-        />
+      <div style={{ width: "490px", height: "348px", position: "relative" }}>
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "348px",
+              width: imageWidth,
+              objectFit: "contain",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              opacity: index === currentSlideIndex ? 1 : 0,
+              transition: "opacity 0.5s",
+            }}
+          />
+        ))}
       </div>
       <Swiper
         onSlideChange={handleSlideChange}
         slidesPerView={4}
         spaceBetween={10}
-        style={{ width: "490px", height: "auto" }}
+        style={{ width: "490px", height: "auto", marginTop: "-80px" }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -58,6 +65,7 @@ const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
 };
 
 const ImageWrapper = styled.img<{ isActive: boolean }>`
+  cursor: pointer;
   width: 100%;
   height: 100%;
   border: ${({ isActive }) => (isActive ? "4px solid #aaa" : "none")};

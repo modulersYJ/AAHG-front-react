@@ -30,8 +30,8 @@ export default function StoreDetail(): JSX.Element {
 }
 
 const Container = styled.div`
-  width: 1000px;
   max-width: 1000px;
+  width: 80vw;
   /* min-width: 800px; */
   margin: 120px auto 0px auto;
 
