@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nickname": "운좋은 올빼미",
-    "date": "2022-01-01",
+    "date": "2023-04-08",
     "rating": 4,
     "imgUrl": "https://via.placeholder.com/150",
     "comment": "사장님 최고! 딱 제가 만든거 그대로 뽑아주셨어요!"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "nickname": "슬픈 다람쥐",
-    "date": "2022-01-02",
+    "date": "2022-04-07",
     "rating": 5,
     "imgUrl": "https://via.placeholder.com/150",
     "comment": "제일 가까운 업체라서 믿고 맡겨봤는데 매우 만족합니다~~~"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "nickname": "돈절래",
-    "date": "2022-01-03",
+    "date": "2022-04-05",
     "rating": 2,
     "imgUrl": "https://via.placeholder.com/150",
     "comment": "엥 소리 나오는 퀄리티... 뭐죠 이거?"

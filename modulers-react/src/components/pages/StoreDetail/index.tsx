@@ -1,18 +1,28 @@
 import React from "react";
 
 import { OutletDefault } from "../../common/Outlet";
-import MySwiper from "./MySwiper";
-import images from "./images";
+import MySwiper from "./Heads/MySwiper";
+import images from "./Heads/images";
 import StoreSecContent from "./Contents";
+import StoreBasicInfo from "./Heads/StoreBasicInfo";
+
 import styled from "styled-components";
 
+const dummyData = {
+  name: "미래 공방",
+  rating: 4.5,
+  reviewCount: 102,
+  ownerComment: "상상력을 최고의 작품으로 만들어드려요!",
+  address: "서울시 강남구 역삼동",
+};
 export default function StoreDetail(): JSX.Element {
   return (
     <OutletDefault>
       <Container>
-        <section className="store-sec-head">
+        <HeaderSection>
           <MySwiper images={images} />
-        </section>
+          <StoreBasicInfo store={dummyData} />
+        </HeaderSection>
         <StoreSecContent />
       </Container>
     </OutletDefault>
@@ -20,5 +30,23 @@ export default function StoreDetail(): JSX.Element {
 }
 
 const Container = styled.div`
+  width: 1000px;
+  max-width: 1000px;
+  /* min-width: 800px; */
   margin: 120px auto 0px auto;
+
+  @media (max-width: 800px) {
+    margin: 10px;
+  }
+`;
+
+const HeaderSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
 `;

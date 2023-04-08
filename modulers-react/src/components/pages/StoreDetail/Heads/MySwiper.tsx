@@ -17,7 +17,7 @@ const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
 
   const handleImageClick = (index: number) => {
     setImageWidth(images[index].width);
-    setImageHeight(images[index].height);
+    // setImageHeight(images[index].height);
     setCurrentSlideIndex(index);
   };
 
@@ -31,7 +31,7 @@ const MySwiper = ({ images }: { images: Image[] }): JSX.Element => {
             maxWidth: "100%",
             maxHeight: "348px",
             width: imageWidth,
-            height: imageHeight,
+            // height: imageHeight,
             objectFit: "contain",
           }}
         />
