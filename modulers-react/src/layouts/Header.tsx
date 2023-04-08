@@ -1,8 +1,12 @@
-import { StyledLink } from "../components/common/Buttons";
+import {
+  HeaderButton,
+  RoundButton,
+  StyledLink,
+} from "../components/common/Buttons";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+// import logo from "/imgs/storeImgDummies/AAHG_LOGO.png";
 interface IHeaderProps {
   sidebarOpen: boolean;
   handleOpenClick: () => void;
@@ -10,27 +14,33 @@ interface IHeaderProps {
 
 const Header = ({ sidebarOpen, handleOpenClick }: IHeaderProps) => {
   return (
-    <GreenHeader>
+    <BlackHeader>
       <SidebarHeader>
-        <button onClick={handleOpenClick}>햄버거(열기/닫기)</button>
+        <HeaderButton onClick={handleOpenClick}>Menu</HeaderButton>
       </SidebarHeader>
-      <h2>이것이 헤더</h2>
+      <HeaderCenter>
+        <h1 style={{ display: "flex", alignItems: "center" }}>
+          <img src={"/imgs/AAHG_LOGO.png"} alt="로고" width={"50px"} />
+          AAHG
+        </h1>
+        <span>- Already At your Home Goods</span>
+      </HeaderCenter>
       <HeaderRight>
         <StyledLink to={"/"} style={{ margin: 0, padding: 0 }}>
-          <h6>홈으로</h6>
+          <h6>Home</h6>
         </StyledLink>
       </HeaderRight>
-    </GreenHeader>
+    </BlackHeader>
   );
 };
 
 export default Header;
 
-const GreenHeader = styled.header`
+const BlackHeader = styled.header`
   height: 70px;
   width: auto;
   /* padding: 10px 20px; */
-  background-color: #033240;
+  background-color: #000000;
   color: white;
   position: sticky;
   top: 0;
@@ -54,8 +64,17 @@ const SidebarHeader = styled.div`
 const HeaderRight = styled.div`
   width: 200px;
   height: 100%;
-  background-color: #153652;
+  background-color: #040c14;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+const HeaderCenter = styled.div`
+  width: 500px;
+  height: 100%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: medium;
 `;

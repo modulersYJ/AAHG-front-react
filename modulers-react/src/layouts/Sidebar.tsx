@@ -33,7 +33,6 @@ const Sidebar = () => {
 
   return (
     <BlackSidebar>
-      <div>이것이 사이드바</div>
       <nav>
         <MenuDiv onClick={handleParentClick} id="generate">
           만들기
@@ -41,9 +40,9 @@ const Sidebar = () => {
         {selectedMenus.generate === true ? (
           <ChildMenuList>
             <StyledLink to={`/generate`}>
-              <div>만들기</div>
+              <ChildMenu>만들기</ChildMenu>
             </StyledLink>
-            <StyledLink to={`/order/${someId}`}>
+            {/* <StyledLink to={`/order/${someId}`}>
               <div>자식메뉴2</div>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
@@ -51,7 +50,7 @@ const Sidebar = () => {
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
               <div>자식메뉴4</div>
-            </StyledLink>
+            </StyledLink> */}
           </ChildMenuList>
         ) : (
           <></>
@@ -62,25 +61,25 @@ const Sidebar = () => {
         {selectedMenus.shop === true ? (
           <ChildMenuList>
             <StyledLink to={`/match`}>
-              <div>매칭</div>
+              <ChildMenu>매칭</ChildMenu>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴2</div>
+              <ChildMenu>주문</ChildMenu>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴3</div>
+              <ChildMenu>주문2</ChildMenu>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴4</div>
+              <ChildMenu>주문3</ChildMenu>
             </StyledLink>
           </ChildMenuList>
         ) : (
           <></>
         )}
-        <MenuDiv onClick={handleParentClick} id="myPage">
+        {/*<MenuDiv onClick={handleParentClick} id="myPage">
           메뉴3
         </MenuDiv>
-        {selectedMenus.myPage === true ? (
+         {selectedMenus.myPage === true ? (
           <ChildMenuList>
             <StyledLink to={`/my-page`}>
               <div>자식메뉴1</div>
@@ -118,7 +117,7 @@ const Sidebar = () => {
           </ChildMenuList>
         ) : (
           <></>
-        )}
+        )} */}
       </nav>
       <RoundButton>
         {/* <SubmitButton>로그아웃</SubmitButton> */}
@@ -138,7 +137,11 @@ const BlackSidebar = styled.aside`
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
+  nav {
+    width: 100%;
+  }
   /* justify-content: center; */
   /* align-items: center; */
   @media (max-width: 800px) {
@@ -148,19 +151,29 @@ const BlackSidebar = styled.aside`
 
 const MenuDiv = styled.div`
   /* height: 10px; */
-  padding: 20px 0px;
-  background-color: #40a68e;
+  padding: 10px;
+  background-color: #12372e;
   border: 1px solid white;
   &:hover {
-    background-color: white;
+    background-color: #ee7373;
   }
 `;
 
-const ChildMenuList = styled.div`
-  /* &:hover {
-    background-color: white;
-  } */
-  div {
-    color: white;
+const ChildMenuList = styled.div``;
+
+const ChildMenu = styled.div`
+  &:not(:hover) {
+    /* &:hover 속성 */
+    /* 예를 들어, 배경색을 변경하고 싶다면 다음과 같이 작성할 수 있습니다: */
+    background-color: #3b2828;
   }
+
+  /* &:hover 상태에 대한 스타일을 적용 */
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
 `;

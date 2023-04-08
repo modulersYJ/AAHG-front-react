@@ -21,7 +21,7 @@ export const SubmitButton = styled.input`
   padding: 10px;
 `;
 export const RoundButton = styled.button`
-  background-color: red;
+  background-color: #e24242;
   color: white;
   width: 100px;
   height: 50px;
@@ -30,4 +30,18 @@ export const RoundButton = styled.button`
   border: 0px;
   margin: 10px;
   padding: 10px;
+`;
+export const HeaderButton = styled.button`
+  background-color: #e24242;
+  color: white;
+  width: 70px;
+  height: 30px;
+  font-size: large;
+  border-radius: 10px;
+  border: 0px;
+  margin: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 `;
