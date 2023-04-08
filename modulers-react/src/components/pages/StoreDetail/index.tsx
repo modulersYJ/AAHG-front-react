@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import IMAGES, { Image } from "./images";
+import React from "react";
 
 import { OutletDefault } from "../../common/Outlet";
 import MySwiper from "./MySwiper";
