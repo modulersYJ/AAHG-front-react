@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { SubmitButton } from "../common/Buttons";
+import { GoodInput } from "../common/Inputs";
 
 const Login = () => {
   // const { register, handleSubmit } = useForm();
@@ -108,10 +109,10 @@ const GoodForm = styled.form`
   width: 50vw;
 `;
 
-const GoodInput = styled.input`
-  height: 30px;
-  border-radius: 10px;
-  margin: 10px 0px;
-`;
+// const GoodInput = styled.input`
+//   height: 30px;
+//   border-radius: 10px;
+//   margin: 10px 0px;
+// `;
 
 export default Login;

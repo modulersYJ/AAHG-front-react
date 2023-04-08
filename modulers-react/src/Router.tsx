@@ -10,7 +10,11 @@ import Login from "./components/pages/LogIn";
 import Generate from "./components/pages/Generate";
 import ErrorComponent500 from "./components/errors/ErrorComponent500";
 import Match from "./components/pages/Match";
+<<<<<<< HEAD
 import StoreDetail from "./components/pages/StoreDetail";
+=======
+import Order from "./components/pages/Order";
+>>>>>>> cfca5a2727e029e2cc7db0c19ca98c38b85c2429
 
 const router = createBrowserRouter([
   {
@@ -42,11 +46,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorComponent500 />,
         element: <Match />,
       },
-      {
-        path: "shop",
-        errorElement: <ErrorComponent500 />,
-        element: <Dummy />,
-      },
+      // {
+      //   path: "shop",
+      //   errorElement: <ErrorComponent500 />,
+      //   element: <Dummy />,
+      // },
       {
         path: "store-detail",
         errorElement: <ErrorComponent500 />,
@@ -60,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "order/:id",
         errorElement: <ErrorComponent500 />,
-        element: <Dummy />,
+        element: <Order />,
       },
     ],
   },

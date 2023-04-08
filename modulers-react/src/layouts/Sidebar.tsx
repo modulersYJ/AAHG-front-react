@@ -26,7 +26,7 @@ const Sidebar = () => {
     order: boolean;
   }
 
-  const handleLinkClick = (e) => {
+  const handleParentClick = (e) => {
     const isOpen = selectedMenus[e.target.id];
     setSelectedMenus({ ...selectedMenus, [e.target.id]: !isOpen });
   };
@@ -35,7 +35,16 @@ const Sidebar = () => {
     <BlackSidebar>
       <div>이것이 사이드바</div>
       <nav>
+<<<<<<< HEAD
         <MenuDiv onClick={handleLinkClick} id="generate">
+=======
+        <MenuDiv
+          onClick={handleParentClick}
+          name="generate"
+          id="generate"
+          level={1}
+        >
+>>>>>>> cfca5a2727e029e2cc7db0c19ca98c38b85c2429
           만들기
         </MenuDiv>
         {selectedMenus.generate === true ? (
@@ -56,13 +65,18 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
+<<<<<<< HEAD
         <MenuDiv onClick={handleLinkClick} id="shop">
           메뉴2
+=======
+        <MenuDiv onClick={handleParentClick} name="shop" id="shop" level={1}>
+          업체 보기
+>>>>>>> cfca5a2727e029e2cc7db0c19ca98c38b85c2429
         </MenuDiv>
         {selectedMenus.shop === true ? (
           <ChildMenuList>
-            <StyledLink to={`/order/${someId}`}>
-              <div>자식메뉴1</div>
+            <StyledLink to={`/match`}>
+              <div>매칭</div>
             </StyledLink>
             <StyledLink to={`/order/${someId}`}>
               <div>자식메뉴2</div>
@@ -77,7 +91,16 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
+<<<<<<< HEAD
         <MenuDiv onClick={handleLinkClick} id="myPage">
+=======
+        <MenuDiv
+          onClick={handleParentClick}
+          name="myPage"
+          id="myPage"
+          level={1}
+        >
+>>>>>>> cfca5a2727e029e2cc7db0c19ca98c38b85c2429
           메뉴3
         </MenuDiv>
         {selectedMenus.myPage === true ? (
@@ -98,7 +121,11 @@ const Sidebar = () => {
         ) : (
           <></>
         )}
+<<<<<<< HEAD
         <MenuDiv onClick={handleLinkClick} id="order">
+=======
+        <MenuDiv onClick={handleParentClick} name="order" id="order" level={1}>
+>>>>>>> cfca5a2727e029e2cc7db0c19ca98c38b85c2429
           메뉴4
         </MenuDiv>
         {selectedMenus.order === true ? (
@@ -131,7 +158,8 @@ const Sidebar = () => {
 export default Sidebar;
 
 const BlackSidebar = styled.aside`
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 200px;
   background-color: #000000;
   color: white;
