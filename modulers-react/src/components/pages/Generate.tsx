@@ -151,7 +151,8 @@ const StyledImgOutlet = styled.div<StyledImgOutletProps>`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${(props) => props.imageUrl});
-  background-color: orange;
+  background-color: #b8b8b85c;
+  border-radius: 3%;
 `;
 
 const StyledButtonsOutlet = styled.div`
