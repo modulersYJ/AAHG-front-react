@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Match = () => {
   const matchList = [
-    { name: "shop1", shopId: "1" },
+    { name: "미래 공방", shopId: "1" },
     { name: "shop2", shopId: "2" },
     { name: "shop3", shopId: "3" },
   ];
