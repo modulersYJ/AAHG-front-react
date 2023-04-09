@@ -12,6 +12,7 @@ import ErrorComponent500 from "./components/errors/ErrorComponent500";
 import Match from "./components/pages/Match";
 import StoreDetail from "./components/pages/StoreDetail";
 import Order from "./components/pages/Order";
+import Intro from "./components/pages/Intro.tsx";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         errorElement: <ErrorComponent500 />,
-        element: <Home />,
+        // element: <Home />,
+        element: <Intro />,
       },
       {
         path: "generate",
