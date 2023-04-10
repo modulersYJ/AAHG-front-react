@@ -58,7 +58,7 @@ const Match = () => {
         console.log("Video received");
         setWarning(false);
         const videoUrl = URL.createObjectURL(res.data);
-        setVideoSrc(videoUrl); // 수정
+        setVideoSrc(videoUrl);
         // if (videoRef.current) {
         //   videoRef.current.src = videoSrc;
         // }

@@ -1,4 +1,3 @@
-// VideoPlayer.tsx
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
