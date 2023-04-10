@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from "../url";
 
-export interface RegisterData {
+export interface IRegisterData {
   username: string;
   password: string;
   nickname: string;
@@ -16,7 +17,7 @@ export interface RegisterData {
   interests: string;
 }
 
-export const registerUser = async (data: RegisterData) => {
-  const response = await axios.post("/api/user/register", data);
+export const registerUser = async (data: IRegisterData) => {
+  const response = await axios.post(`${API_BASE_URL}/user/register`, data);
   return response.data;
 };
