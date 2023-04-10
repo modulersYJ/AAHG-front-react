@@ -12,7 +12,7 @@ import ErrorComponent500 from "./components/errors/ErrorComponent500";
 import Match from "./components/pages/Match";
 import StoreDetail from "./components/pages/StoreDetail";
 import Order from "./components/pages/Order";
-import Intro from "./components/pages/Intro.tsx";
+import Intro from "./components/pages/Intro";
 
 const router = createBrowserRouter([
   {

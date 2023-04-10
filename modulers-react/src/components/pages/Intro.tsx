@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import NetworkGlobe from "./NetworkGlobe";
+import NetworkGlobe from "./IntroSubs/NetworkGlobe";
 import { useNavigate } from "react-router-dom";
 
 export default function Intro(): JSX.Element {

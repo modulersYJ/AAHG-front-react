@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { RoundButton } from "../common/Buttons";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import VideoPlayer from "./GenerateComps/VideoPlayer";
+import VideoPlayer from "../common/VideoPlayer";
 import { HashSpinner } from "../common/Spinners";
 
 type StyledImgOutletProps = {

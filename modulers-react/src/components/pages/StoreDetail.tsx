@@ -1,12 +1,12 @@
 import React from "react";
-
-import { OutletDefault } from "../../common/Outlet";
-import MySwiper from "./Heads/MySwiper";
-import images from "./Heads/images";
-import StoreSecContent from "./Contents";
-import StoreBasicInfo from "./Heads/StoreBasicInfo";
-
 import styled from "styled-components";
+
+import { OutletDefault } from "../common/Outlet";
+
+import MySwiper from "./StoreDetailSubs/Heads/MySwiper";
+import images from "./StoreDetailSubs/Heads/images";
+import StoreBasicInfo from "./StoreDetailSubs/Heads/StoreBasicInfo";
+import StoreSecContent from "./StoreDetailSubs/Contents";
 
 const dummyData = {
   name: "미래 공방",
